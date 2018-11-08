@@ -1,0 +1,60 @@
+<div id="main" class="container">
+  <div class="label-logo">CONSULTAR ENDEREÇO POR CEP</div>
+  <br>
+  <br>
+  <div class="row">
+    <fieldset class="container p-3 bg-dark">
+      <form id="idFormPesquisa">
+        <div class="row">
+          <div class="col-md-2 form-group">
+            <h6>Informe o CEP:</h6>
+          </div>
+          <div class="col-md-3 form-group">
+            <input type="text" id="idCepInput" name="nameCepInput" #cepInput pInputText style=" margin-left: -70px; width: 100px; height: 25px;"
+              maxlength="9" (keyup)="executaMascara(cepInput)" (keyup)="pesquisaCep($event.target.value)" [(ngModel)]="ngCepInput"
+              required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 form-group">
+            <h6>CEP</h6>
+            <input type="text" id="idCep" name="nameCep" disabled pInputText [(ngModel)]="listaDadosCep.cep" />
+          </div>
+          <div class=" col-md-5 form-group">
+            <h6>Logradouro</h6>
+            <input type="text" id="idLogradouro" name="nomeLogradouro" disabled pInputText style="width: 450px;"
+              [(ngModel)]="listaDadosCep.logradouro" />
+          </div>
+          <div class=" col-md-4 form-group">
+            <h6>Complemento</h6>
+            <input type="text" id="idComplemento" name="nameComplemento" disabled pInputText style="width: 350px;"
+              [(ngModel)]="listaDadosCep.complemento" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 form-group">
+            <h6>Bairro</h6>
+            <input type="text" id="idBairro" name="nameBairro" disabled pInputText [(ngModel)]="listaDadosCep.bairro" />
+          </div>
+          <div class=" col-md-3 form-group">
+            <h6>Localidade</h6>
+            <input type="text" id="idLocalidade" name="nameLocalidade" disabled pInputText [(ngModel)]="listaDadosCep.localidade" />
+          </div>
+          <div class=" col-md-1 form-group">
+            <h6>Estado</h6>
+            <input type="text" id="idEstado" name="nameEstado" disabled pInputText style="width:50px;" [(ngModel)]="listaDadosCep.uf" />
+          </div>
+          <div class=" col-md-3 form-group">
+            <h6>IBGE</h6>
+            <input type="text" id="idIbge" name="nameIbge" disabled pInputText [(ngModel)]="listaDadosCep.ibge" />
+          </div>
+          <div class=" col-md-2 form-group">
+            <button class="btn btn-primary mr-4" (click)="limparCampos()" style="width: 120px; margin-left: 35px; margin-top: 1.9rem;">
+              Limpar
+            </button>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+</div>
